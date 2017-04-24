@@ -22,9 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity {
+public class sugg extends AppCompatActivity {
 
-    public EditText username, name, passwored, phoneNumber;
+    public EditText sugg;
 
     public Button insert ;
 
@@ -37,10 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        username = (EditText) findViewById(R.id.username);
-        name = (EditText) findViewById(R.id.name);
-        passwored = (EditText) findViewById(R.id.pass);
-        phoneNumber = (EditText) findViewById(R.id.phone);
+        sugg = (EditText) findViewById(R.id.apo);
 
         insert= (Button)findViewById(R.id.button);
 
@@ -51,21 +48,17 @@ public class MainActivity extends AppCompatActivity {
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String un = username.getText().toString();
-                String n = name.getText().toString();
-                String p = passwored.getText().toString();
-                String pn= phoneNumber.getText().toString();
+                String sug = sugg.getText().toString();
+
 
                 List<NameValuePair>  nameValuePair =new ArrayList<NameValuePair>(1);
 
-                nameValuePair.add(new BasicNameValuePair("uname",un));
-                nameValuePair.add(new BasicNameValuePair("name",n));
-                nameValuePair.add(new BasicNameValuePair("psw",p));
-                nameValuePair.add(new BasicNameValuePair("phone",pn));
+                nameValuePair.add(new BasicNameValuePair("sugg",sug));
+
 
                 try{
                       HttpClient httpClient = new DefaultHttpClient();
-                      HttpPost httpPost = new HttpPost("http://zwarh.net/zwarhapp/Dalal/Add.php");
+                      HttpPost httpPost = new HttpPost("http://zwarh.net/zwarhapp/Mai/Add_sugg.php?selectedFromList="+invitations.selectedFromList);
                       httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
                       HttpResponse response = httpClient.execute(httpPost);
                       HttpEntity entity = response.getEntity();

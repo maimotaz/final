@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.dalal.myapplication.table_info">
+
+    <ImageView
+        android:layout_width="227dp"
+        android:layout_height="49dp"
+        android:background="@drawable/zwarahh"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <Spinner
+        android:layout_width="99dp"
+        android:layout_height="59dp"
+        tools:layout_editor_absoluteY="301dp"
+        tools:layout_editor_absoluteX="49dp"
+        android:id="@+id/spinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="67dp"
+        android:layout_height="50dp"
+        android:background="@drawable/pers"
+        android:id="@+id/imageView3"
+        tools:layout_editor_absoluteY="7dp"
+        tools:layout_editor_absoluteX="317dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="69dp"
+        android:layout_height="49dp"
+        android:background="@drawable/saham"
+        android:id="@+id/imageView2"
+        android:layout_alignBottom="@+id/imageView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <ImageButton
+        android:background="@drawable/savetable"
+        tools:layout_editor_absoluteY="421dp"
+        tools:layout_editor_absoluteX="246dp"
+        android:id="@+id/imageButton14"
+        android:scaleType="fitXY"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/imageButton15"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
+
+    <ImageButton
+        android:onClick="ignor"
+        android:background="@drawable/canceltable"
+        tools:layout_editor_absoluteY="421dp"
+        tools:layout_editor_absoluteX="246dp"
+        android:id="@+id/imageButton15"
+        android:scaleType="fitXY"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/imageButton14"
+        android:layout_below="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="30dp"
+        android:text="معلومات الطاولة" />
+
+
+</RelativeLayout>
+
+
+
