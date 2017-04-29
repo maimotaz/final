@@ -33,16 +33,13 @@ public class invitation_info extends AppCompatActivity {
     String result = null;
     String [] arr ;
     public InputStream is ;
-    static double lati;
-    static double loni;
     Button map;
-    //String selectedFromList = (lv.getItemAtPosition(1).toString());
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
 
         lv = (ListView) findViewById(R.id.list);
         map = (Button) findViewById(R.id.button2);
@@ -55,13 +52,10 @@ public class invitation_info extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
 
-        StrictMode.ThreadPolicy policy2 = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy2);
-
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://zwarh.net/zwarhapp/Mai/invitation_info.php?selectedFromList="+invitations.ID);
+            HttpPost httpPost = new HttpPost("http://zwarh.net/zwarhapp/Mai/invitation_info.php?selectedFromList="+invitations.selectedFromList);
             HttpResponse response = httpClient.execute(httpPost);
             HttpEntity entity = response.getEntity();
 
@@ -79,7 +73,7 @@ public class invitation_info extends AppCompatActivity {
 
             StringBuilder sb = new StringBuilder();
             while ((line=reader.readLine())!=null)
-            sb.append(line+"\n");
+                sb.append(line+"\n");
 
             result=sb.toString();
             result=result.replace('"',' ');
@@ -88,53 +82,27 @@ public class invitation_info extends AppCompatActivity {
 
             //use toString() to get the data result
             result=sb.toString();
-
             // check the data
             System.out.println(sreOne);
             arr= sreOne.split(",");
             int arrLength = arr.length ;
 
             lv.setAdapter(new ArrayAdapter<String>(invitation_info.this,android.R.layout.simple_list_item_1,arr));
-            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-
-
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                    List<NameValuePair> nameValuePair =new ArrayList<NameValuePair>(1);
-                    AlertDialog.Builder builder = new AlertDialog.Builder(invitation_info.this);
-
-                    String input= (getIntent().getExtras().getString("latitude"));
-                  //  String input=(String)parent.getItemAtPosition(position);
-                    lati=Double.parseDouble(input.replaceAll(" ",""));
-
-                   // String input2=(String)parent.getItemAtPosition(position);
-                    String input2= (getIntent().getExtras().getString("longitude"));
-                    loni=Double.parseDouble(input2.replaceAll(" ",""));
-
-
-                    AlertDialog alert = builder.create();
-                    alert.show();
 
 
 
-                }
-            });
+
         }  catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
-
 
 
         accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                List<NameValuePair> nameValuePair =new ArrayList<NameValuePair>(1);
 
-           List<NameValuePair> nameValuePair =new ArrayList<NameValuePair>(1);
 
 
 
@@ -153,7 +121,6 @@ public class invitation_info extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
             }
         });
 
@@ -170,7 +137,6 @@ public class invitation_info extends AppCompatActivity {
         Intent intent = new Intent(invitation_info.this, apologiz.class);
         startActivity(intent);
     }
-
 
     public void map (View view)
     {

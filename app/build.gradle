@@ -34,9 +34,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile files('/Users/mai/Desktop/final/.idea/libraries/gson-2.2.4.jar')
-    compile files('/Users/mai/Desktop/final/.idea/libraries/KGJsonConverter.jar')
-    compile files('/Users/mai/Desktop/final/.idea/libraries/GenAsync.1.2.jar')
+
+
+
     compile 'com.parse:parse-android:1.10.3'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

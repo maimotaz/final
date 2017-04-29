@@ -54,7 +54,7 @@ public class rec_inv_info extends AppCompatActivity {
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://zwarh.net/zwarhapp/Mai/invitation_info.php?ID="+invitations.ID);
+            HttpPost httpPost = new HttpPost("http://zwarh.net/zwarhapp/Mai/invitation_info.php?selectedFromList="+receved_inv.selectedFromList);
             HttpResponse response = httpClient.execute(httpPost);
             HttpEntity entity = response.getEntity();
 

@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -36,7 +34,6 @@ public class receved_inv extends AppCompatActivity {
 
     public static String selectedFromList;
     public static int ID;
-    ListView lv ;
     InputStream is ;
     String line = null;
     String result = null;
@@ -77,7 +74,7 @@ public class receved_inv extends AppCompatActivity {
             lv.setAdapter(Adapter);
 
 
-        } catch (Exception e) {
+        }   catch (Exception e) {
             System.out.print("exception 1 caught");
             //exception handel code
         }
@@ -131,7 +128,7 @@ public class receved_inv extends AppCompatActivity {
             Accept.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String selectedFromList = name.toString();
+                     selectedFromList = name.toString();
                     selectedFromList = selectedFromList.replaceAll("\\s+", "");
 
                     ID = pos + 1;

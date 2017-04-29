@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -135,7 +133,7 @@ public class CustomAdapter extends BaseAdapter {
         Accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String selectedFromList = name.toString();
+                selectedFromList = name.toString();
                 selectedFromList = selectedFromList.replaceAll("\\s+", "");
 
                 ID = pos + 1;
@@ -145,7 +143,7 @@ public class CustomAdapter extends BaseAdapter {
                 List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(1);
 
 
-                Intent intent = new Intent(invitations.this, rec_inv_info.class);
+                Intent intent = new Intent(invitations.this,invitation_info.class);
                 startActivity(intent);
 
                 //do things
